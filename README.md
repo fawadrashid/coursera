@@ -1,2 +1,2 @@
-coursera
+coursera courses quizzes, assignments and projects
 ========
