@@ -1,0 +1,29 @@
+--select count(docid) from (select docid, sum(count) as 'tc' from frequency  Group By term having tc > 300); 
+
+--select count(docid) from (select docid, sum(count) as 'tc' from frequency  Group By docid having tc > 300);
+
+
+--select count(docid) from (select docid from frequency group by docid having term IN ('transactions','world')); 
+
+--select docid from (select docid from frequency group by docid having term in ('transactions','world')) where term; 
+
+--select distinct docid from frequency where term='transactions' and docid in (select distinct docid from frequency where term='world');
+
+--select a.row_num, b.col_num, sum(a.value * b.value) from a,b where a.col_num = b.row_num group by a.row_num, b.col_num;
+
+--select a.term, b.term, sum(a.count * b.count) from frequency a, frequency b where a.term = b.term;
+
+--SELECT similarity
+--FROM(
+--    SELECT  F1.docid as docid1, 
+--            F2.docid as docid2, 
+--            SUM(F1.count * F2.count) as similarity 
+--    FROM Frequency as F1, Frequency as F2
+--    WHERE F1.term = F2.term AND
+--          F1.docid = '10080_txt_crude' AND 
+--          F2.docid = '17035_txt_earn'
+ --  GROUP BY F1.docid, F2.docid);
+
+select docid, sum(mult) as total from (select a.docid, a.term, a.count, b.count, a.count*b.count as mult from Frequency a, (select 'q' as docid, 'washington' as term, 1 as count UNION select 'q' as docid, 'taxes' as term, 1 as count UNION select 'q' as docid, 'treasury' as term, 1 as count) b where a.term=b.term) group by docid order by total asc;
+
+
