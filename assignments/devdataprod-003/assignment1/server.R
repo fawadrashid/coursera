@@ -10,19 +10,13 @@ library(shiny)
 library(gridBase)
 library(grid)
 library(devtools)
-data(USArrests)
+#data(USArrests)
 
 shinyServer(function(input, output) {
   
   # Fill in the spot we created for a plot
   output$attrocitiesPlot <- renderPlot({
-    
-    # Render a barplot
-#     barplot(USArrests[,input$selectAttrocities], 
-#             names.arg=rownames(USArrests),
-#             col=rainbow(nrow(USArrests)),
-#             ylab=input$selectAttrocities,
-#             xlab="States", beside=TRUE)
+
     midpts <- barplot(USArrests[,input$selectAttrocities], 
                 names.arg="",
                 col=rainbow(nrow(USArrests)),

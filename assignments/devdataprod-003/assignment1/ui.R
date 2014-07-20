@@ -5,7 +5,7 @@
 # http://www.rstudio.com/shiny/
 #
 library(shiny)
-data(USArrests)
+#data(USArrests)
 
 shinyUI(pageWithSidebar(
   
