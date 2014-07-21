@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Coursera Data Products Course</title>
+  <title>Coursera Developing Data Products Course</title>
   <meta charset="utf-8">
-  <meta name="description" content="Coursera Data Products Course">
+  <meta name="description" content="Coursera Developing Data Products Course">
   <meta name="author" content="Fawad Rashid">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,9 +32,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Coursera Data Products Course</h1>
+    <h1>Coursera Developing Data Products Course</h1>
     <h2>Assignment 1</h2>
-    <p>Fawad Rashid<br/>Assignment 1</p>
+    <p>Fawad Rashid<br/>USA Arrests rates across states by crimes</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,25 +43,61 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Description</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <p>Thi is a Shiny app that visualizes USA arrests dataset. The application allows user to select a crime type and see the crime across states using a barplot</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Details</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>The barplot shows the spread of a cetain crime type across the various US states. You may select a crime type to see the crime rate across various states. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Crime trends graph example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is a crime chart barplot</p>
+
+<pre><code class="r">df&lt;- midpts &lt;- barplot(USArrests[,&quot;Murder&quot;], 
+                      names.arg=&quot;&quot;,
+                      col=rainbow(nrow(USArrests)),
+                      ylab=&quot;Murder&quot;,
+                      xlab=&quot;&quot;, beside=TRUE)
+</code></pre>
+
+<h2><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </h2>
+
+<h2>Graph explained</h2>
+
+<p>The graph uses reactive select input that triggers bar plot. The select input crime type which is read from the USArrests dataset columns triggers the bar plot re-render when the selection is changed. The graph is quite simple as the dataset is quite simple as well. It plots the number of crimes of a certain  crime type plotted across US states</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application took me more time as it should have around 3-4 hours as I have very little experience wth R. I have very little experience with data analysis hence i chose to do something simple in a attempt to demostrate that I have understood most of what was taught in regards to Shiny during the class</p>
+
+<p>The plot was quite simply to draw although getting the x axis labels aligned took me some time</p>
+
+<p>I hope i was able to complete the assignment with the limited knoweledge I had </p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -72,14 +108,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Description'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Details'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Crime trends graph example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
       </a>
     </li>
   </ul>
