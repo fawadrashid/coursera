@@ -1,9 +1,9 @@
 ---
-title       : Coursera Developing Data Products Assignment 1
-subtitle    : 
+title       : Coursera Data Products Course
+subtitle    : Assignment 1
 author      : Fawad Rashid
 job         : Assignment 1
-framework   : io2012,html5slides        # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
