@@ -16,23 +16,26 @@ shinyServer(function(input, output) {
   
   # Fill in the spot we created for a plot
   output$attrocitiesPlot <- renderPlot({
-
-    midpts <- barplot(USArrests[,input$selectAttrocities], 
-                names.arg="",
-                col=rainbow(nrow(USArrests)),
-                ylab=input$selectAttrocities,
-                xlab="", beside=TRUE)
-        
-        ## Use grid to add the labels    
-        vps <- baseViewports()
-        pushViewport(vps$inner, vps$figure, vps$plot)
-        
-        grid.text(rownames(USArrests),
-                  x = unit(midpts, "native"), y=unit(-1, "lines"),
-                  just="right", rot=50)
-        
-        popViewport(3)
     
+    midpts <- barplot(USArrests[,input$selectAttrocities], 
+                      names.arg="",
+                      col=rainbow(nrow(USArrests)),
+                      ylab=input$selectAttrocities,
+                      xlab="", beside=TRUE)
+    
+    ## Use grid to add the labels    
+    vps <- baseViewports()
+    pushViewport(vps$inner, vps$figure, vps$plot)
+    
+    grid.text(rownames(USArrests),
+              x = unit(midpts, "native"), y=unit(-1, "lines"),
+              just="right", rot=50)
+    
+    popViewport(3)
+    
+    output$selectionText <- renderText(paste("Crime selected:" , input$selectAttrocities))
+    #verbatimTextOutput("Crime selected:" + input$selectAttrocities)
+     
   })
   
 })

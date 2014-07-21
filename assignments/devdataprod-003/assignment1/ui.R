@@ -17,9 +17,11 @@ shinyUI(pageWithSidebar(
     # Copy the line below to make a select box 
     selectInput("selectAttrocities", label = h3("Select Crime Type"), 
                 choices = names(USArrests), 
-                selected = 1)
+                selected = 1),
     
-   
+    
+    textOutput("selectionText")
+    
   ),
   
   # Show a plot of the generated distribution
